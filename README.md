@@ -7,5 +7,7 @@ The Bot folder has everything you need to train your bot.
 
 The RLBotExample folder has all the files you need to put your bot into RLBot and run it in offline Rocket League matches.
 
-Refer to my Youtube channel for a complete tutorial to create your bot!
+
+
+## Refer to my Youtube channel for a complete tutorial to create your bot!
 https://www.youtube.com/@SCACreations 
