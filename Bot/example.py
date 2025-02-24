@@ -117,17 +117,23 @@ def build_rocketsim_env():
     # zero sum reward usage  (ZeroSumReward(YourReward(), team_spirit, opp_scale), yourweight)
     # make demo reward = goal reward for it to learn demos
     reward_fn = CombinedReward.from_zipped( # Format is (func, weight)
-        # basic rewards
+        '''
+        # ball touch phase
         (InAirReward(), 0.2),
         (FaceBallReward(), 1.0),
-        #(KickoffProximityReward(), 15.0), # closer to ball on kickoff than opponent
         (SpeedTowardBallReward(), 5.0),
-        #(VelocityBallToGoalReward(), 2.0),
-        #(BoostReward(), 0.1),
-        #(BoostPickupReward(), 1.33),
-        #(SpeedReward(), 0.05),
         (BallTouchReward(True), 50.0),
-        #(EventReward(team_goal=1.0, concede=-0.85, demo=0.35), 750.0),
+        '''
+
+        '''
+        # scoring phase
+        (KickoffProximityReward(), 5.0),
+        (InAirReward(), 0.03),
+        (FaceBallReward(), 0.1),
+        (SpeedTowardBallReward(), 1.0),
+        (VelocityBallToGoalReward(), 2.0),
+        (EventReward(team_goal=1.0, concede=-0.85, '''demo=0.4'''), 50.0), # you can uncomment the demo part once the bot is scoring
+        '''
     )
 
 
